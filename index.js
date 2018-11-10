@@ -5,14 +5,15 @@ const shows = require('./shows');
 
 const app = express();
 app.use(cors());
-app.use(function(req, res, next)
+app.use(function(res, next)
 {
   res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  res.header("Access-Control-Allow-Headers", "*");
+  //res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   next();
 });
 
-app.get('/', (req, res) => {
+app.get('/', (res) => {
   res.json({
     message: 'Welcome to KSDB !'
   });
