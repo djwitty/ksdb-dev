@@ -18,6 +18,10 @@
     "nodemon": "^1.18.6"
   },
   "now": {
-    "alias": "ksdb-dev-fpizjylgyf"
+    "version": "2",
+    "alias": "ksdb-dev-fpizjylgyf",
+    "builds": [
+      { "src": "*/index.js", "use": "@now/node-server" }
+    ]
   }
 }

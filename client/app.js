@@ -2,7 +2,7 @@ const form = document.querySelector('form');
 const searchInput = document.querySelector('input');
 const resultsList = document.querySelector('#results');
 
-//const BASE_URL = 'https://ksdb-dev-fpizjylgyf.now.sh/'
+const BASE_URL = 'https://ksdb-dev-fpizjylgyf.now.sh/'
 
 form.addEventListener('submit', formSubmitted);
 
@@ -17,19 +17,18 @@ function formSubmitted(event)
 
 function getSearchResults(searchTerm)
 {
-  fetch(
-    'https://ksdb-dev-fpizjylgyf.now.sh/search/${searchTerm}'
+  return fetch(
+    `${BASE_URL}search/${searchTerm}`
     )
     .then(res => res.json());
-/*    .then(results => {
-      console.log(results)
-    });*/
 }
 
 
 
 function showResults(results)
 {
+  console.log(results);
+  results.forEach(movie => {})
   results.forEach(show => {
     const li = document.createElement('li');
     const img = document.createElement('img');
